@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekhruz Shodiev</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d012f; /* Black background */
+            color: #ffffff;
+            animation: fadeIn 1s ease-in;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: slideIn 0.5s ease-in;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline li {
+            padding: 10px;
+            border-left: 4px solid #00ffff; 
+            margin-bottom: 10px;
+        }
+        #skills {
+    overflow: hidden; 
+    white-space: nowrap; 
+}
+
+.skills {
+    display: inline-block; /* Изменяем display для горизонтального движения */
+    animation: moveRight 30s linear infinite; /* Анимация движения вправо */
+}
+
+.skills div {
+    display: inline-block; /* Изменяем display для горизонтального размещения */
+    margin: 10px;
+    text-align: center;
+}
+
+/* Анимация для перемещения вправо */
+@keyframes moveRight {
+    from {
+        transform: translateX(100%); 
+    }
+    to {
+        transform: translateX(-100%); 
+    }
+}
+
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-image {
+    width: 100%; /* Ширина изображения 100% */
+    height: auto; /* Автоматическая высота */
+    border-radius: 8px 8px 0 0; 
+}
+        .project {
+            background: rgba(226, 226, 226, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            background: rgba(53, 66, 74, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            border-top: 2px solid #00ffff; /* Neon turquoise */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        a {
+            color: #00ffff; /* Neon turquoise */
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 20px #00ffff; /* Neon glow effect */
+        }
+
+        /* Phone Menu Styles */
+        .container {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    perspective: 5000px;
+    position: relative;
+    transform: scale(1.2); /* Увеличение на 20% */
+}
+
+
+
+
+
+
+
+
+        .menu {
+            margin: 100px auto;
+            position: relative;
+            background: #62278d;
+            background: linear-gradient(to bottom, #62278d 0%, #2cc09b 100%);
+            width: 300px;
+            border-width: 20px 0;
+            border-style: solid;
+            border-color: #fff;
+            color: #fff;
+            height: 540px;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 0 50px 0 #444;
+        }
+
+        input.toggle:checked ~ .menu {
+            transform: translateY(-200px) translateZ(-150px) rotateX(45deg) rotateZ(45deg);
+        }
+
+        .menu .top {
+            padding: 15px 15px 15px 20px;
+            width: 100%;
+        }
+
+        .menu .top .search {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu .top .search input {
+            background-color: transparent;
+            transition: all 100ms ease-in-out;
+            color: transparent;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            padding: 10px 30px 10px 20px;
+            width: 150px;
+        }
+
+        .menu .top .search input:focus {
+            outline: none;
+            color: #fff;
+            width: 200px;
+        }
+
+        .menu .middle {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu .middle li {
+            padding: 20px 20px 20px 30px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s;
+        }
+
+        .menu .middle li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu .bottom {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-links {
+    display: flex;
+    gap: 15px; /* расстояние между иконками */
+    margin-top: 10px; /* отступ сверху */
+}
+
+.about-me {
+    color: #00ffb7; /* Цвет текста */
+    font-family: 'Arial', sans-serif; /* Шрифт текста */
+    font-size: 18px; /* Размер текста */
+    background-color: #00000000; /* Цвет фона секции */
+    padding: 20px; /* Внутренние отступы (padding) */
+    border-radius: 10px; /* Скругление углов */
+    margin: 20px auto; /* Отступы вокруг блока */
+    max-width: 800px; /* Максимальная ширина секции */
+    line-height: 1.6; /* Межстрочный интервал для удобочитаемости */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0); /* Тень для эффекта поднятого блока */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+
+
+.social-icon {
+    font-size: 24px; /* размер иконок */
+    color: #bdbdbd; /* цвет иконок */
+    transition: color 0.3s, transform 0.3s; /* плавный переход */
+}
+
+.social-icon:hover {
+    color: #007bff; /* цвет при наведении */
+    transform: scale(1.2); /* увеличение иконки при наведении */
+}
+
+        
+
+        input.toggle:checked ~ .menu-back {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Additional styles */
+        .hidden {
+            display: none;
+        }
+
+        /* Toggle Switch Style */
+        .toggle-switch {
+            
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .toggle-switch input {
+            display: none; /* Hide the checkbox */
+        }
+
+        .toggle-switch label {
+         color: #00ffff00;
+        }
+
+        .toggle-switch label:before {
+            content: "";
+  position: absolute;
+  width: 100%;
+  height: 530%;
+  left: 0;
+  top: 0;
+  filter: blur(20px);
+  z-index: -1;
+  border-radius: 10px;
+  background-color: #090031;
+  background-image: radial-gradient(at 21% 46%, rgb(0, 16, 26) 0px, transparent 50%),
+radial-gradient(at 23% 25%, rgb(119, 22, 0) 0px, transparent 50%),
+radial-gradient(at 20% 1%, rgb(89, 0, 255) 0px, transparent 50%),
+radial-gradient(at 86% 87%, rgb(61, 0, 86) 0px, transparent 50%),
+radial-gradient(at 99% 41%, rgba(255, 0, 217, 0.406) 0px, transparent 50%),
+radial-gradient(at 55% 24%, rgba(255, 179, 0, 0.82) 0px, transparent 50%);
+        }
+
+        .toggle-switch input:checked + label {
+            background-color: #00ffff00; /* Neon turquoise */
+        }
+
+        .toggle-switch input:checked + label:before {
+            transform: translateX(25px);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>                                     ㅤ
+        ㅤ
+    </h1>
+    
+    <h2>ㅤ</h2>
+    <p>ㅤ</p>
+</header>
+
+<div class="toggle-switch">
+    <input type="checkbox" id="background-toggle" onchange="toggleBackground()">
+    <label for="background-toggle">Toggle Background</label>
+</div>
+
+<div class="container">
+    <input type="checkbox" class="toggle" id="toggle" checked="checked" />
+    <label class="toggle" for="toggle"></label>
+    <div class="menu">
+        <div class="top">
+            <span class="search">
+                <input type="text" placeholder="Search...">
+            </span>
+            <a class="exit" href="#" tabindex="0"></a>
+        </div>
+        <ul class="middle">
+            <li tabindex="0" onclick="scrollToSection('about-me')"><i class="fa fa-user"></i>About Me</li>
+            <li tabindex="0" onclick="scrollToSection('my-journey')"><i class="fa fa-calendar"></i>My Journey</li>
+            <li tabindex="0" onclick="scrollToSection('skills')"><i class="fa fa-check-square-o"></i>Skills</li>
+            <li tabindex="0" onclick="scrollToSection('projects')"><i class="fa fa-folder"></i>Projects</li>
+            <li tabindex="0" onclick="scrollToSection('contact')"><i class="fa fa-envelope"></i>Contact</li>
+        </ul>
+        <div class="bottom">
+            <p>&copy; 2024 My Portfolio</p>
+        </div>
+    </div>
+    <div class="menu-back"></div>
+</div>
+
+<div class="about-me">
+  <section id="about-me">
+    
+    <h2>About Me</h2> 
+    <h3>Shodiev Bekhruz</h3> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+        <p style="font-family: 'Roboto Slab', serif; font-size: 16px;">Since childhood, I've pursued a wide range of interests as a polymath—technology, economics, and sports. At 13, I launched my first online store, serving over 50 customers, sparking my passion for entrepreneurship.</p>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+<p style="font-family: 'Roboto Slab', serif; font-size: 16px;">As a web and app developer, I love programming because it combines creativity and problem-solving, letting me bring innovative ideas to life.</p>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+<p style="font-family: 'Roboto Slab', serif; font-size: 16px;">Blockchain and cryptocurrency are my current focus, as I see them shaping the future economy. My leadership as a volleyball captain honed my teamwork and problem-solving skills, which I apply to every project.</p>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <p style="font-family: 'Roboto Slab', serif; font-size: 16px;">Creativity and innovation
+        My creativity is the driving force in my work. I see programming as an opportunity to embody unique ideas and create digital products that help solve the current problems of the modern world. </p>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <p style="font-family: 'Roboto Slab', serif; font-size: 16px;">Driven by a deep commitment to my work, I quickly deliver results by immersing myself fully.</p>
+        
+
+        
+    <p></p>
+  </section>
+</div>
+
+<section id="my-journey">
+    <h2>My Journey</h2>
+    <ul class="timeline">
+        <li>2018:I started creating web sites</li>
+        <li>2019:I started creating unity games using C#</li>
+        <li>2020:I have created my own online store "Qnex shop"</li>
+        <li>2021:interested in Python (programming language)</li>
+        <li>2022: Started creating my own telegram bots using python </li>
+        <li>2023: I started learning how to make smart contracts, applications and games on the Ton blockchain.</li>
+        <li>2024: Expanded my skills in blockchain technology</li>
+    </ul>
+</section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div><i class="fab fa-html5"></i> HTML</div>
+        <div><i class="fab fa-css3-alt"></i> CSS</div>
+        <div><i class="fab fa-js"></i> JavaScript</div>
+        <div><i class="fab fa-unity"></i> Unity</div>
+        <div><i class="fas fa-code"></i> C#</div>
+        <div><i class="fas fa-lock"></i> Blockchain</div>
+        <div><i class="fab fa-python"></i> Python</div>
+        <div><i class="fas fa-cplusplus"></i> C++</div>
+        <div><i class="fas fa-pencil-alt"></i> UX/UI Design</div>
+        <div><i class="fas fa-tasks"></i> Project Management</div>
+        <div><i class="fas fa-file-excel"></i> Excel</div>
+        <div><i class="fas fa-paint-brush"></i> Web Designer</div>
+        <div><i class="fas fa-code"></i> Full-Stack Developer</div>
+        <div><i class="fab fa-telegram-plane"></i> Telegram Bot Developer</div>
+
+
+    </div>
+</section>
+
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <!-- Project 1 -->
+        <div class="project">
+            <img src="project1.png" alt="Project 1 Image" class="project-image">
+            <h3>Eclipse</h3>
+            <p>A community for photographers at school, founded by my friends and me, aimed at highlighting the significant role that photography plays in our lives. I also developed a dedicated platform for this community, allowing members to share their ideas and showcase their photographs.</p>
+            <p><strong>Tags:</strong>html, css, js, firebase, community</p>
+            <a href="https://beka02221.github.io/test34-3/index.html" target="_blank">Visit</a> | 
+            <a href="https://previewer.adalo.com/f45c61a2-f4b6-4e37-8572-9cf981df4ba9" target="_blank">Visit V2</a> 
+            <a href="https://github.com/beka02221/test34-3" target="_blank">| Source Code</a>
+        </div>
+    
+        <!-- Project 2 -->
+        <div class="project">
+            <img src="project2.png" alt="Project 2 Image" class="project-image">
+            <h3>Qnex shop</h3>
+            <p>I launched my online store at the age of 15, where we proudly source all our products directly from China. This strategy enables us to offer high-quality goods at competitive prices. To date, we have successfully served over 50 satisfied clients, showcasing our commitment to excellence and customer satisfaction.</p>
+            <p><strong>Tags:</strong> instagram, online shop, html, css, js, Excel</p>
+            <a href="https://beka02221.github.io/onlineshopQnex/" target="_blank">Visit web site</a> | 
+            <a href="https://www.instagram.com/qnexshop/" target="_blank">Visit instagram</a>
+            <a href="https://github.com/beka02221/onlineshopQnex" target="_blank">Source Code</a>
+        </div>
+    
+        <!-- Project 3 -->
+        <div class="project">
+            <img src="path_to_image3.png" alt="Project 3 Image" class="project-image">
+            <h3>Telegram bot AI assistant</h3>
+            <p>I developed an AI Assistant Bot for Telegram using Python and a AI service API. This bot helps users with various tasks, such as retrieving information and providing recommendations. By integrating external APIs, I ensured real-time data access and enhanced user experience. The bot processes user commands and messages, making it a valuable tool for information and task automation.</p>
+            <p><strong>Tags:</strong> Python, AI, API, Telegram bot</p>
+            <a href="....." target="_blank"></a> | 
+            <a href="https://github.com/beka02221/miniapp-test" target="_blank">Source Code</a>
+        </div>
+    
+        <!-- Project 4 -->
+        <div class="project">
+            <img src="project4.png" alt="Project 4 Image" class="project-image">
+            <h3>Webapp for telegram bot</h3>
+            <p>This project is a mini-website that simplifies ordering products from various establishments. Users can select and order items in just a few clicks through a Telegram bot. It showcases my skills in design and integration of a mini app into the Telegram bot.
+            </p>
+            <p><strong>Tags:</strong> html, css , js, telegram bot</p>
+            <a href="https://t.me/miniappcafebot" target="_blank">Demo</a> | 
+            <a href="https://github.com/beka02221/miniapp-test" target="_blank">Source Code</a>
+        </div>
+    
+        <!-- Project 5 -->
+        <div class="project">
+            <img src="path_to_image5.png" alt="Project 5 Image" class="project-image">
+            <h3>Autoweb creator</h3>
+            <p>Our bot instantly transforms your HTML, CSS, and JavaScript code into a live website. Just upload your code and see it come to life in under a minute! Perfect for developers at any level.</p>
+            <p><strong>Tags:</strong> Python, Telegram bot, AI, Api</p>
+            <a href="..." target="_blank"></a> | 
+            <a href="https://github.com/beka02221/autoweb" target="_blank">Source Code</a>
+        </div>
+    
+        <!-- Project 6 -->
+        <div class="project">
+            <img src="project3.png" alt="Project 6 Image" class="project-image">
+            <h3>Escape room</h3>
+            <p>I developed this game using Unity and C# in just a week, targeting WebGL for seamless browser play. Players solve puzzles and navigate through a series of rooms to escape. With over three years of Unity experience, I implemented interactive mechanics to enhance the experience.</p>
+            <p><strong>Tags: </strong> C#, Unity,</p>
+            <a href="https://yandex.ru/games/app/377777?draft=true&lang=ru" target="_blank">Demo</a> | 
+            <a href="https://github.com/username/project6" target="_blank">Source Code.....</a>
+        </div>
+    </div>
+    
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out!</p>
+    
+    <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://t.me/Idkwhyton" target="_blank" class="social-icon">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="mailto:bekhruz.one@gmail.com" class="social-icon">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</section>
+
+
+<footer>
+    <p>&copy; Created by Bekhruz Shodiev</p>
+</footer>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function toggleBackground() {
+        const currentColor = document.body.style.backgroundColor;
+        document.body.style.backgroundColor = currentColor === 'rgb(34, 31, 43)' ? '#f0f0f0' : '#221f2b'; // Toggle between black and light grey
+    }
+</script>
+
+</body>
+</html>
